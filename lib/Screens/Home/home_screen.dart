@@ -36,6 +36,12 @@ class HomeScreen extends StatefulWidget {
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
+extension StringExtension on String {
+  String capitalize() {
+    return "${this[0].toUpperCase()}${this.substring(1).toLowerCase()}";
+  }
+}
+
 class _HomeScreenState extends State<HomeScreen> {
   final ScrollController _scrollController = ScrollController();
 
@@ -155,7 +161,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                                 .split(
                                                   ' ',
                                                 )[0]
-                                                .toString(),
+                                                .toString()
+                                                .capitalize(),
                                         style: const TextStyle(
                                           letterSpacing: 2,
                                           fontSize: 20,
